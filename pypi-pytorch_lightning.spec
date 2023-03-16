@@ -4,7 +4,7 @@
 #
 Name     : pypi-pytorch_lightning
 Version  : 2.0.0
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/59/90/aca5b41c0229add6787b39bcef7dc9725cfd994f462508cd5b1b85393596/pytorch-lightning-2.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/59/90/aca5b41c0229add6787b39bcef7dc9725cfd994f462508cd5b1b85393596/pytorch-lightning-2.0.0.tar.gz
 Summary  : PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678900164
+export SOURCE_DATE_EPOCH=1678985766
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
