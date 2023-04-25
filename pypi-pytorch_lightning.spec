@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pytorch_lightning
-Version  : 2.0.1.post0
-Release  : 4
-URL      : https://files.pythonhosted.org/packages/e7/e5/7ea193105ea06aaaae5523e9855c4f58b8276a70f4cfff2ef7a685b789f3/pytorch-lightning-2.0.1.post0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/e7/e5/7ea193105ea06aaaae5523e9855c4f58b8276a70f4cfff2ef7a685b789f3/pytorch-lightning-2.0.1.post0.tar.gz
+Version  : 2.0.2
+Release  : 5
+URL      : https://files.pythonhosted.org/packages/1d/6e/1c14cadb2f8357111042f850a689ef95f49028c5c14722b0f08f2d5bef8a/pytorch-lightning-2.0.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/1d/6e/1c14cadb2f8357111042f850a689ef95f49028c5c14722b0f08f2d5bef8a/pytorch-lightning-2.0.2.tar.gz
 Summary  : PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -60,10 +60,10 @@ python3 components for the pypi-pytorch_lightning package.
 
 
 %prep
-%setup -q -n pytorch-lightning-2.0.1.post0
-cd %{_builddir}/pytorch-lightning-2.0.1.post0
+%setup -q -n pytorch-lightning-2.0.2
+cd %{_builddir}/pytorch-lightning-2.0.2
 pushd ..
-cp -a pytorch-lightning-2.0.1.post0 buildavx2
+cp -a pytorch-lightning-2.0.2 buildavx2
 popd
 
 %build
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681314497
+export SOURCE_DATE_EPOCH=1682435153
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
