@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pytorch_lightning
-Version  : 2.0.2
-Release  : 5
-URL      : https://files.pythonhosted.org/packages/1d/6e/1c14cadb2f8357111042f850a689ef95f49028c5c14722b0f08f2d5bef8a/pytorch-lightning-2.0.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/1d/6e/1c14cadb2f8357111042f850a689ef95f49028c5c14722b0f08f2d5bef8a/pytorch-lightning-2.0.2.tar.gz
+Version  : 2.0.3
+Release  : 6
+URL      : https://files.pythonhosted.org/packages/52/5b/90f84388c18711df3addb72939db07c551365f1d628d6567a4246b3dc966/pytorch-lightning-2.0.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/52/5b/90f84388c18711df3addb72939db07c551365f1d628d6567a4246b3dc966/pytorch-lightning-2.0.3.tar.gz
 Summary  : PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -15,6 +15,8 @@ Requires: pypi-pytorch_lightning-license = %{version}-%{release}
 Requires: pypi-pytorch_lightning-python = %{version}-%{release}
 Requires: pypi-pytorch_lightning-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(wheel)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -60,10 +62,10 @@ python3 components for the pypi-pytorch_lightning package.
 
 
 %prep
-%setup -q -n pytorch-lightning-2.0.2
-cd %{_builddir}/pytorch-lightning-2.0.2
+%setup -q -n pytorch-lightning-2.0.3
+cd %{_builddir}/pytorch-lightning-2.0.3
 pushd ..
-cp -a pytorch-lightning-2.0.2 buildavx2
+cp -a pytorch-lightning-2.0.3 buildavx2
 popd
 
 %build
@@ -71,15 +73,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682435153
+export SOURCE_DATE_EPOCH=1686327953
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
