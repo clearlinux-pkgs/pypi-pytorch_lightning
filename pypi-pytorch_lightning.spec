@@ -7,7 +7,7 @@
 #
 Name     : pypi-pytorch_lightning
 Version  : 2.1.3
-Release  : 18
+Release  : 19
 URL      : https://files.pythonhosted.org/packages/20/38/2583076edbe2813d276cdb1391e25be6a5281a5e748d3bf02d19e8d6480a/pytorch-lightning-2.1.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/20/38/2583076edbe2813d276cdb1391e25be6a5281a5e748d3bf02d19e8d6480a/pytorch-lightning-2.1.3.tar.gz
 Summary  : PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.
