@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pytorch_lightning
-URL = https://files.pythonhosted.org/packages/86/4f/996085dfacfa4102f2ee519da46ee06cd14e3f6c6eb39ccc3406c309b42a/pytorch-lightning-2.2.0.tar.gz
+URL = https://files.pythonhosted.org/packages/7a/17/f1f0a11989527034fdd795714edd9a2947deab17e6d37417263a6d3b001c/pytorch-lightning-2.2.0.post0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
